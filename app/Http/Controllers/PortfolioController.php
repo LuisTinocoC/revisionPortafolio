@@ -2,73 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('portfolio.index');
+    public function index() {
+        $portfolios = Portfolio::all();
+
+        // ReferenciaCarpeta.Nombre
+        return view('portfolio.index', compact('portfolios'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        // Falta Lógica
+    public function create() {
         return view('portfolio.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param \Illuminate\Http\Requests
-     * @return \Illuminate\Http\Response
-     */
-    public function store()
-    {
-        // Para crear el archivo, más tarde
+    public function store(Request $request) {
+        Portfolio::create($request->all());
+
+        return redirect()->route('portfolio.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show()
-    {
-        // Falta lógica
-        return view('portfolio.show',);
+    public function show(Portfolio $portfolio) {
+
+        //return view('portfolio.show', compact('portfolios'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @param \App\Ticket $ticket
-     * @return \Illuminate\Http\Response
-     */
-    public function edit()
-    {
-        // Falta lógica
-        return view('portfolio.edit');
+    public function edit(Portfolio $portfolio) {
+        //return view('portfolio.edit', compact('portfolio'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param \Illuminate\Https\Request $request
-     * @param \App\Ticket $ticket
-     * @return
-     */
-    public function update()
-    {
-        // Completar con logica
+    public function update(Request $request, Portfolio $portfolio) {
+        $portfolio->update($request->all());
+
+        //return redirect()->route('portfolios.show', $portfolio);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy()
-    {
-        //Completar con lógica
+    public function destroy(Portfolio $portfolio) {
+        $portfolio->delete();
+
+        //return redirect()->route('portfolios.index');
     }
 }
