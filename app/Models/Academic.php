@@ -18,7 +18,7 @@ class Academic extends Model
         'professor_id',
         'semester_id',
         'course_id',
-        'curriculum_id',
+        'curricula_id',
         'portfolio_id',
     ];
 

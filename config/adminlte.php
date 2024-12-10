@@ -340,9 +340,14 @@ return [
             'icon' => 'fas fa-check-circle',
         ],
         [
-            'text' => 'Asignar',
-            'url' => '/asignar',
-            'icon' => 'fas fa-users',
+            'text' => 'revisores',
+            'url' => '/reviewers',
+            'icon' => 'fas fa-users'
+        ],
+        [
+            'text' => 'docentes',
+            'url' => '/professors',
+            'icon' => 'fas fa-users'
         ]
     ],
 

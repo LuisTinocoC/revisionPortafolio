@@ -18,32 +18,27 @@ return new class extends Migration
             $table->foreignId('professor_id')
                 ->constrained()
                 ->onDelete('cascade')
-                ->onUpdate('cascade')
-                ->nullable();
+                ->onUpdate('cascade');
             // Relación con tabla Semestre(semesters)
             $table->foreignId('semester_id')
                 ->constrained()
                 ->onDelete('cascade')
-                ->onUpdate('cascade')
-                ->nullable();
+                ->onUpdate('cascade');
             // Relación con tabla Curso(courses)
             $table->foreignId('course_id')
                 ->constrained()
                 ->onDelete('cascade')
-                ->onUpdate('cascade')
-                ->nullable();
+                ->onUpdate('cascade');
             // Relación con tabla Malla(curriculums)
             $table->foreignId('curricula_id')
                 ->constrained()
                 ->onDelete('cascade')
-                ->onUpdate('cascade')
-                ->nullable();
+                ->onUpdate('cascade');
             // Relación con tabla Portafolio(portfolios)
             $table->foreignId('portfolio_id')
                 ->constrained()
                 ->onDelete('cascade')
-                ->onUpdate('cascade')
-                ->nullable();
+                ->onUpdate('cascade');
 
             $table->timestamps();
         });

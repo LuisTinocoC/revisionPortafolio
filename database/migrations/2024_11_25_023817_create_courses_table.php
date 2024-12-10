@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('code');
             $table->string('name');
-            $table->longText('content')->nullable;
+            $table->longText('content')->nullable();
 
             $table->timestamps();
         });

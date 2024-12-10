@@ -18,7 +18,8 @@ class Professor extends Model
         'name',
         'email',
         'password',
-        'reviewer_id'
+        'reviewer_id',
+        'enabled'
     ];
 
     /**
